@@ -1,5 +1,7 @@
 package jogodavelha;
 
+import java.util.Objects;
+
 public class Tabuleiro  {
     private String[][] tabuleiro;
 
@@ -42,10 +44,10 @@ public class Tabuleiro  {
 
     public boolean verificaVitoria(String marca) {
         for(int i=0; i < tabuleiro.length; i++) {
-            if((tabuleiro[i][0] == marca && tabuleiro[i][1] == marca && tabuleiro[i][2] == marca) || (tabuleiro[0][i] == marca && tabuleiro[1][i] == marca && tabuleiro[2][i] == marca)) {
+            if((Objects.equals(tabuleiro[i][0], marca) && Objects.equals(tabuleiro[i][1], marca) && Objects.equals(tabuleiro[i][2], marca)) || (Objects.equals(tabuleiro[0][i], marca) && Objects.equals(tabuleiro[1][i], marca) && Objects.equals(tabuleiro[2][i], marca))) {
                 return true;
             }
-            if((tabuleiro[0][0] == marca && tabuleiro[1][1] == marca && tabuleiro[2][2] == marca || (tabuleiro[0][2] == marca && tabuleiro[1][1] == marca && tabuleiro[2][0] == marca))) {
+            if((Objects.equals(tabuleiro[0][0], marca) && Objects.equals(tabuleiro[1][1], marca) && Objects.equals(tabuleiro[2][2], marca) || (Objects.equals(tabuleiro[0][2], marca) && Objects.equals(tabuleiro[1][1], marca) && Objects.equals(tabuleiro[2][0], marca)))) {
                 return true;
             }
         }
